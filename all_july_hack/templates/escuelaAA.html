@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Tutu {% endblock %}
+
+
+{% block contenido %}
+
+<div>
+    <h1 class="text-3xl font-bold text-gray-900">Escuela</h1>
+    <p class="mt-2 text-sm text-gray-500">Aqui veras tu escuela</p>
+</div>
+
+
+        <div class="pl-6 pt-2 pb-6">
+            <li>Nombre: {{ escuelas.nombre }} </li>
+            <li>Departamento: {{ escuelas.departamento }}</li>
+            <li>Ciudad: {{ escuelas.ciudad }} </li>
+            <li>Barrio: {{ escuelas.barrio }}</li>
+            <li>Cantidad de Alumnos: {{ escuelas.cantidad_alumnos }} </li>
+            <li>Cantidad de Alumnos: {{ escuelas.cantidad_alumnas }} </li>
+        </div>
+
+        <div>
+            <li>
+                <a href="/escuela/kit/{{escuelas.id}}" class="text-indigo-600 hover:text-indigo-900">Merienda y Kit Escolar<span class="sr-only"></a>
+            </li>
+            <li>
+                <a href="/colegios/docente/{{escuelas.id}}" class="text-indigo-600 hover:text-indigo-900">Docentes<span class="sr-only"></a>
+            </li>
+            <li>
+                <a href="/colegios/sala/{{escuelas.id}}" class="text-indigo-600 hover:text-indigo-900">Infraestructura<span class="sr-only"></a>
+            </li>
+        </div>
+
+
+
+
+
+
+{% endblock %}

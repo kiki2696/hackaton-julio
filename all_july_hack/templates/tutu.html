@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Tutu {% endblock %}
+
+
+{% block contenido %}
+
+{% for i in escuela %}
+    <li>Escuela: {{i.nombre}}</li>
+    <li>Departamento: {{i.departamento}}</li>
+{% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

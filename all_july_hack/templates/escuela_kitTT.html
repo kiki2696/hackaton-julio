@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Merienda y Kit Escolar {% endblock %}
+
+
+{% block contenido %}
+
+
+
+<!-- MERIENDA ESCOLAR -->
+<div>
+  <div class="px-4 sm:px-6 lg:px-8">
+      <div class="sm:flex sm:items-center">
+        <div class="sm:flex-auto">
+          <h1 class="text-base font-semibold leading-6 text-gray-900">Lista de Merienda y Kit Escolar</h1>
+          <p class="mt-2 text-sm text-gray-700">Aqui veras una lista de merienda y kit escolar</p>
+        </div>
+        <!-- <div id='add_user' class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+          Agregar funcion mostrar/esconder boton agregar usuario
+          <button type="button" onclick="add_user()" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Agregar Usuario</button>
+        </div> -->
+      </div>
+      <div class="mt-8 flow-root">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead>
+                <tr>
+                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Merienda Entregado</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Merienda en Falta</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Fecha Entrega</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Fecha en Falta</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Presupuesto Real</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Presupuesto Mec</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                  {% for merienda in merienda_escolar %}
+                      <tr>
+                          <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{merienda.merienda_entregado}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{merienda.merienda_en_falta}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{merienda.fecha_entrega}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{merienda.fecha_en_falta}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{merienda.presupuesto_real}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{merienda.presupuesto_mec}}</td>
+                      </tr>
+                  {% endfor %}
+</div>  
+                  <!-- agregar alert de presupuesto pasa -->
+                  
+                  <!--  -->
+
+<!-- KIT ESCOLAR -->
+<div>
+
+      <!-- <div id='add_user' class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+        Agregar funcion mostrar/esconder boton agregar usuario
+        <button type="button" onclick="add_user()" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Agregar Usuario</button>
+      </div> -->
+    </div>
+    <div class="mt-8 flow-root">
+      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <table class="min-w-full divide-y divide-gray-300">
+            <thead>
+              <tr>
+                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Kit Escolar Entregado</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Kit Escolar en Falta</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Fecha Entrega</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Fecha en Falta</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Presupuesto Real</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Presupuesto Mec</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                {% for kit in kit_escolar %}
+                    <tr>
+                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{kit.kit_entregado}}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{kit.kit_en_falta}}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{kit.fecha_entrega}}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{kit.fecha_en_falta}}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{kit.presupuesto_real}}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{kit.presupuesto_mec}}</td>
+                    </tr>
+                {% endfor %}
+</div>
+
+    <!-- Agregar el alert aquí -->
+    <div>
+      {% for kit in kit_escolar %}
+          {% if kit.presupuesto_mec > kit.presupuesto_real %}
+              <p class="text-red-400">El presupuesto del MEC es mayor al presupuesto real para el kit escolar</p>
+          {% else %}
+              <p>El presupuesto para el kit escolar del MEC esta en regla</p>
+          {% endif %}
+      {% endfor %}
+    </div>
+
+    <div>
+      {% for merienda in merienda_escolar %}
+          {% if merienda.presupuesto_mec > merienda.presupuesto_real %}
+              <p class="text-red-400">El presupuesto del MEC es mayor al presupuesto real para la merienda escolar</p>
+          {% else %}
+              <p>El presupuesto para la merienda escolar del MEC esta en regla</p>
+          {% endif %}
+      {% endfor %}
+    </div>
+
+
+
+
+
+
+{% endblock %}

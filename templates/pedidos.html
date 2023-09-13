@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Direccion{% endblock %}
+
+{% block contenido %}
+
+<div>
+    <h1>Aqui veras una lista de pedidos del director</h1>
+</div>
+<div>
+    {% for pedido in pedidos %}
+        <li>Fecha Merienda Escolar: {{ pedido.merienda_escolar_fecha }}</li>
+        <li>Cantidad Merienda Escolar: {{ pedido.merienda_escolar_cantidad }}</li>
+        <li>Fecha Kit Escolar: {{ pedido.kit_escolar_fecha }}</li>
+        <li>Cantidad Kit Escolar: {{ pedido.kit_escolar_cantidad }}</li>
+    {% endfor %}
+
+
+
+{% endblock %}

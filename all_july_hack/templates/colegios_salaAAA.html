@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Salas de Clase {% endblock %}
+
+
+{% block contenido %}
+
+    <div>
+        <h1 class="text-3xl font-bold text-gray-900">Salas de Clase</h1>
+        <p class="mt-2 text-sm text-gray-500">Aqui veras algunos datos de las salas de clase</p>
+    </div>
+
+    <div>
+        {% for sala in salas %}
+            <li>Grado: {{sala.grado}}</li>
+            <li>Turno: {{sala.turno}}</li>
+            <li>Alumnos: {{sala.alumnos}}</li>
+            <li>Alumnas: {{sala.alumnas}}</li>
+            <li>Zurdos: {{sala.zurdos}}</li>
+            <li>Diestros: {{sala.diestros}}</li>
+            <li>Pupitres Zurdos: {{sala.pupitres_zurdos}}</li>
+            <li class="pb-6">Pupitres Diestros: {{sala.pupitres_diestros}}</li>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

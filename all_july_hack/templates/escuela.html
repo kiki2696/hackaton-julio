@@ -1,0 +1,119 @@
+{% extends 'base.html' %} {% block titulo %} Escuela {% endblock %} {% block
+    contenido %}
+    
+    <div class="flex flex-col">
+      <!-- Top Half with Two Columns -->
+      <div class="flex-1 flex">
+        <div class="w-1/2 ml-48 flex-justify-right">
+          <section class="bg-white pt-8">
+            <div
+              class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+            >
+              <div class="mr-auto place-self-center lg:col-span-7">
+
+
+
+                <h1
+                  class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-gray-900"
+                >
+                  Escuela: {{ escuelas.nombre }} 
+                </h1>
+                <p
+                  class="max-w-2xl mb-6 font-light text-gray-700 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+                >
+                  El primer paso para identificar la calidad de un centro es poder
+                  identificar sus indicadores
+                </p>
+    
+                <p
+                  class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 bg-gray-700 dark:focus:ring-gray-800"
+                >
+                {{ escuelas.departamento }}
+                </p>
+                <p
+                  class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 bg-gray-700 dark:focus:ring-gray-800"
+                >
+                {{ escuelas.ciudad }} 
+                </p>
+                <p
+                  class="mt-2 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 bg-gray-700 dark:focus:ring-gray-800"
+                >
+                {{ escuelas.barrio }}
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+    
+        <div class="flex-justify-right">
+          <div class="mx-auto pt-1 flex max-w-xs flex-col gap-y-4">
+            <dt class="text-base leading-7 text-gray-600">Alumnas Matriculadas</dt>
+            <dd
+              class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl pt-24"
+            >
+              <img src="/static/mujer.png" alt="" width="40" />
+              {{ escuelas.cantidad_alumnas }}
+            </dd>
+          </div>
+          <div class="mx-auto pt-6 flex max-w-xs flex-col gap-y-4">
+            <dt class="text-base leading-7 text-gray-600">Alumnos Matriculados</dt>
+            <dd
+              class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+            >
+              <img src="/static/hombre.png" alt="" width="40" />
+              {{ escuelas.cantidad_alumnos }}
+            </dd>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Bottom Half  -->
+      <div class="flex-1">
+        <a href="/escuela/kit/{{escuelas.id}}">
+          <div
+            class="mr-48 ml-48 p-4 mt-6 bg-gray-800 font-sans rounded-md flex justify-center"
+          >
+            <div class="mr-14 ml-6 p-4 rounded-md justify-left">
+              <img src="/static/mochila.png" alt="" width="30" />
+            </div>
+    
+            <div
+              class="mr-24 ml-2 w-full p-0.5 text-gray-50 rounded-md flex justify-center pt-6"
+            >
+              KIT Y MERIENDA ESCOLAR
+            </div>
+          </div>
+        </a>
+        <a href="/colegios/docente/{{escuelas.id}}">
+          <div
+            class="mr-48 mr-4 ml-48 p-4 mt-6 bg-gray-800 font-sans prounded-md flex justify-center"
+          >
+            <div class="mr-14 ml-6 p-4 rounded-md justify-left">
+              <img src="/static/docente.png" alt="" width="40" />
+            </div>
+            <div
+              class="mr-24 ml-2 w-full p-0.5 text-gray-50 rounded-md flex justify-center pt-6"
+            >
+              DOCENTES
+            </div>
+          </div>
+        </a>
+        <a href="/colegios/sala/{{escuelas.id}}">
+          <div
+            class="mr-48 ml-48 p-4 mt-6 bg-gray-800 mb-8 font-sans rounded-md flex justify-center"
+          >
+            <div class="mr-14 ml-6 p-4 rounded-md justify-left">
+              <img src="/static/colegio.png" alt="" width="40" />
+            </div>
+            <div
+              class="pb-6 mr-24 ml-2 w-full p-0.5 text-gray-50 rounded-md flex justify-center pt-6"
+            >
+              INFRAESTRUCTURA
+            </div>
+          </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Editar Pedido{% endblock %}
+
+{% block contenido %}
+<form action="{{ url_for('editar_pedido', id=id) }}", method="post">
+    <div class="px-4 sm:px-6 lg:px-8">
+        <div class="sm:flex sm:items-center">
+          <div class="sm:flex-auto">
+            <p class="mt-2 text-sm text-gray-700">Estos son tus pedidos</p>
+          </div>
+        </div>
+        <div class="mt-8 flow-root">
+          <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+              <table class="min-w-full divide-y divide-gray-300">
+                <thead>
+                    <tr>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Fecha de Merienda Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Cantidad de Merienda Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Precio (MEC) de la Merienda Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Precio (MERCADO) de la Merienda Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Obs de la Merienda Escolar</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Fecha del Kit Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Cantidad del Kit Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Precio (MEC) del Kit Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Precio (MERCADO) del Kit Escolar</th>
+                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Obs del Kit Escolar</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                              <input type="text" name="merienda_escolar_fecha" placeholder="Fecha de Merienda Escolar" value="{{ pedido.merienda_escolar_fecha }}">
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              <input type="number" name="merienda_escolar_cantidad" placeholder="Cantidad de Merienda Escolar" value="{{ pedido.merienda_escolar_cantidad }}">
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              <input type="text" name="merienda_escolar_precio_presupuesto" placeholder="Precio (MEC) de la Merienda Escolar" value="{{ pedido.merienda_escolar_precio_presupuesto }}">
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              <input type="text" name="merienda_escolar_precio_real" placeholder="Precio (MERCADO) de la Merienda Escolar" value="{{ pedido.merienda_escolar_precio_real }}">
+                            </td>
+                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                <input type="text" name="merienda_escolar_obs" placeholder="Obs de la Merienda Escolar" value="{{ pedido.merienda_escolar_obs }}">
+                            </td>
+
+                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                                <input type="text" name="kit_escolar_fecha" placeholder="Fecha del Kit Escolar" value="{{ pedido.kit_escolar_fecha }}">
+                              </td>
+                              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                <input type="number" name="kit_escolar_cantidad" placeholder="Cantidad del Kit Escolar" value="{{ pedido.kit_escolar_cantidad }}">
+                              </td>
+                              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                <input type="text" name="kit_escolar_precio_presupuesto" placeholder="Precio (MEC) de lal Kit Escolar" value="{{ pedido.kit_escolar_precio_presupuesto }}">
+                              </td>
+                              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                <input type="text" name="kit_escolar_precio_real" placeholder="Precio (MERCADO) de lal Kit Escolar" value="{{ pedido.kit_escolar_precio_real }}">
+                              </td>
+                              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                  <input type="text" name="kit_escolar_obs" placeholder="Obs de lal Kit Escolar" value="{{ pedido.kit_escolar_obs }}">
+                              </td>
+
+                            <td>
+                              <button type="submit" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Confirmar</button>
+                            </td>
+                            <td>
+                              <a class="inline-flex items-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600" href="#">
+                                Cancelar
+                              </a>
+                            </td>
+                        </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+  </form>
+
+{% endblock %}
